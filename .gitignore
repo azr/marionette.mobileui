@@ -1,0 +1,12 @@
+node_modules
+./dist
+test/temp
+tmp
+docs
+.DS_Store
+npm-debug.log
+coverage
+report
+examples/bower_components
+
+examples/scripts/marionette.mobileui.js
