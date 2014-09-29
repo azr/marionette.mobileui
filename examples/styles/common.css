@@ -1,0 +1,16 @@
+.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.panel--left {
+  width: 90%;
+}
+
+.panel--left, .panel--right {
+  background: wheat;
+}
+
+.panel--content {
+  background: aliceblue;
+}

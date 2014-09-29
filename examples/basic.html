@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marionette Mobile UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) styles/vendors.css -->
+    <link rel="stylesheet" href="../bower_components/ratchet/dist/css/ratchet.css">
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/marionette.mobileui.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/viewer.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <div class="device">
+      <div class="device-content">
+        <div class="content fullscreen"></div>
+      </div>
+    </div>
+
+    <script src="../bower_components/requirejs/require.js"></script>
+    <script src="scripts/config.js"></script>
+    <script>
+      config('basic/scripts', 'main');
+    </script>
+  </body>
+</html>

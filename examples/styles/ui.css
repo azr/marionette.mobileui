@@ -1,0 +1,7 @@
+.search-form {
+  padding-left: 50px;
+}
+
+.search-form::before {
+  content: '\e819'
+}

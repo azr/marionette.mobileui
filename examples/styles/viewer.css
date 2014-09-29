@@ -1,0 +1,26 @@
+.device {
+  position: relative;
+  top: 50px;
+  display: block;
+  width: 395px;
+  height: 813px;
+  background-image: url(../images/device-sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 300%;
+  margin: 0 auto;
+}
+
+.device .device-content {
+  position: absolute;
+  top: 117px;
+  left: 37px;
+  width: 321px;
+  height: 569px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.device .bar, .device .content, .device .modal, .device .fixed {
+  position: absolute;
+}

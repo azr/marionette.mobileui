@@ -10,3 +10,4 @@ report
 examples/bower_components
 
 examples/scripts/marionette.mobileui.js
+examples/styles/marionette.mobileui.css
