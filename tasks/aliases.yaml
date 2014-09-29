@@ -7,6 +7,8 @@ build:
   - jscs:lib
   - lintspaces:lib
   - preprocess
-  - concat
+  - concat:js
   - uglify
+  - concat:css
+  - cssmin
   - copy:example

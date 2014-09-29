@@ -3,8 +3,12 @@ module.exports = {
     banner: '<%= banner %>',
     stripBanners: true
   },
-  dist: {
+  js: {
     src: 'dist/<%= pkg.name.replace(/.js$/, "") %>.js',
     dest: 'dist/<%= pkg.name.replace(/.js$/, "") %>.js'
+  },
+  css: {
+    src: 'lib/styles/*.css',
+    dest: 'dist/<%= pkg.name.replace(/.js$/, "") %>.css'
   }
 };
