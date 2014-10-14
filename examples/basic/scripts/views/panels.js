@@ -20,6 +20,16 @@ function (Marionette, ui, template, ContentView, LeftView, RightView) {
 
       this.content.currentView.on('panel:show', this.showPanel, this);
       this.right.currentView.on('panel:close', this.closePanel, this);
+    },
+
+    // only for illustration purpose
+    onShowPanel: function (name) {
+      console.log('onShowPanel', name);
+    },
+
+    onClosePanel: function () {
+      console.log('onClosePanel');
     }
+
   });
 });
