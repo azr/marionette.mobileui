@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.1.1
- *  Release on: 2014-10-03
+/*! marionette.mobileui - v0.1.2
+ *  Release on: 2014-10-14
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -45,6 +45,8 @@ define([
         return;
       }
   
+      this.triggerMethod('before:show:panel', name);
+  
       // hide currentPanel if not
       if (this.currentPanel) {
         this.currentPanel.$el.toggleClass(this.panelActiveClass);
@@ -56,16 +58,21 @@ define([
   
       var method = _.bind(this.closePanel, this);
       this.content.$el.one('click', method);
+      this.triggerMethod('show:panel', name);
     },
   
     closePanel: function () {
       if (!this.currentPanel) {
         return;
       }
+      this.triggerMethod('before:close:panel');
       this.currentPanel.$el.toggleClass(this.panelActiveClass);
       this.currentPanel = null;
+      this.triggerMethod('close:panel');
     }
   });
+  
+  Panels.triggerMethod = Marionette.triggerMethod;
   
   mobileui.Panels = Panels;
 
