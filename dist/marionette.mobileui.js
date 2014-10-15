@@ -1,4 +1,4 @@
-/*! marionette.mobileui - v0.1.3
+/*! marionette.mobileui - v0.2.0
  *  Release on: 2014-10-15
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -7,7 +7,10 @@ define([
 ], function (Marionette) {
   'use strict';
 
-  var mobileui = {};
+  var ui = {
+    views: {},
+    helpers: {}
+  };
 
   var Panels = Marionette.LayoutView.extend({
     regions: {
@@ -79,10 +82,47 @@ define([
   
   Panels.triggerMethod = Marionette.triggerMethod;
   
-  mobileui.Panels = Panels;
+  ui.views.Panels = Panels;
+
+  var Overlay = Marionette.ItemView.extend({
+    template: false,
+    className: 'fullscreen--overlay',
+  
+    events: {
+      click: 'onClick'
+    },
+  
+    onClick: function () {
+      this.trigger('click');
+      this.destroy();
+    }
+  });
+  
+  ui.views.Overlay = Overlay;
+
+  var overlay = function ($el, options) {
+    var method = options && options.method ? options.method : 'append';
+    var className = Overlay.prototype.className;
+  
+    // augment overlay view prototype
+    if (options && options.className) {
+      className += ' ' + options.className;
+    }
+  
+    // check if the given `method` is a valid jQuery method. No check is made to only use
+    // DOM operation to simplify this method.
+    var action = $el[method] ? method : 'append'; // default to append
+  
+    var overlay = new Overlay({className: className});
+  
+    $el[action](overlay.render().$el);
+    return overlay;
+  };
+  
+  ui.helpers.overlay = overlay;
 
   // attach to marionette
-  Marionette.mobileui = mobileui;
+  Marionette.mobileui = ui;
 
-  return mobileui;
+  return ui;
 });

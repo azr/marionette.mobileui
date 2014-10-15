@@ -1,7 +1,13 @@
-/*! marionette.mobileui - v0.1.3
+/*! marionette.mobileui - v0.2.0
  *  Release on: 2014-10-15
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
+.fullscreen--overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .panel {
   position: absolute;
   width: 100%;
