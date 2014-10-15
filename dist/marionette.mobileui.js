@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.1.2
- *  Release on: 2014-10-14
+/*! marionette.mobileui - v0.1.3
+ *  Release on: 2014-10-15
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -16,7 +16,8 @@ define([
       content: '.panel--content'
     },
   
-    panelActiveClass: 'active',
+    panelOpenedClass: 'panel--opened',  // to mark that one panel is opened
+    panelActiveClass: 'active',         // to animage open panel
     swipeablePanels: ['left', 'right'],
   
     initialize: function () {
@@ -52,6 +53,9 @@ define([
         this.currentPanel.$el.toggleClass(this.panelActiveClass);
       }
   
+      // add classes
+      this.$el.toggleClass(this.panelOpenedClass);
+  
       var region = this.regionManager.get(name);
       region.$el.toggleClass('active');
       this.currentPanel = region;
@@ -66,6 +70,7 @@ define([
         return;
       }
       this.triggerMethod('before:close:panel');
+      this.$el.toggleClass(this.panelOpenedClass);
       this.currentPanel.$el.toggleClass(this.panelActiveClass);
       this.currentPanel = null;
       this.triggerMethod('close:panel');
