@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.2.0
- *  Release on: 2014-10-15
+/*! marionette.mobileui - v0.2.1
+ *  Release on: 2014-10-17
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -29,9 +29,15 @@ define([
   
     addEventListeners: function () {
       var regions = this.regionManager.getRegions();
-      var method = _.bind(this.closePanel, this);
+      var events = {
+        'panel:close': _.bind(this.closePanel, this),
+        show: _.bind(this.onRegionInjection, this)
+      };
+  
       for (var name in regions) {
-        this.listenTo(regions[name], 'panel:close', method);
+        for (var event in events) {
+          this.listenTo(regions[name], event, events[event]);
+        }
       }
     },
   
@@ -50,17 +56,19 @@ define([
       }
   
       this.triggerMethod('before:show:panel', name);
+      var region = this.regionManager.get(name);
+  
+      var isDifferentView = this.currentPanel || this.currentPanel !== region;
   
       // hide currentPanel if not
-      if (this.currentPanel) {
-        this.currentPanel.$el.toggleClass(this.panelActiveClass);
+      if (this.currentPanel && isDifferentView) {
+        this.currentPanel.$el.removeClass(this.panelActiveClass);
       }
   
       // add classes
-      this.$el.toggleClass(this.panelOpenedClass);
+      this.$el.addClass(this.panelOpenedClass);
   
-      var region = this.regionManager.get(name);
-      region.$el.toggleClass('active');
+      region.$el.addClass('active');
       this.currentPanel = region;
   
       var method = _.bind(this.closePanel, this);
@@ -73,10 +81,16 @@ define([
         return;
       }
       this.triggerMethod('before:close:panel');
-      this.$el.toggleClass(this.panelOpenedClass);
-      this.currentPanel.$el.toggleClass(this.panelActiveClass);
+      this.$el.removeClass(this.panelOpenedClass);
+      this.currentPanel.$el.removeClass(this.panelActiveClass);
       this.currentPanel = null;
       this.triggerMethod('close:panel');
+    },
+  
+    // trigger if a view has been injected in a region which means that an
+    // operation `region.show(view)` has been made.
+    onRegionInjection: function (region) {
+      this.triggerMethod('region:show', region);
     }
   });
   
