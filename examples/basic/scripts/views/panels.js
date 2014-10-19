@@ -9,7 +9,7 @@ define([
 function (Marionette, ui, template, ContentView, LeftView, RightView) {
   'use strict';
 
-  return ui.Panels.extend({
+  return ui.views.Panels.extend({
     template: template,
     className: 'fullscreen',
 
