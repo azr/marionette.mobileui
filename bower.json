@@ -1,6 +1,6 @@
 {
   "name": "marionette.mobileui",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A collection of mobile oriented ui component made on top of marionette",
   "main": "dist/marionette.mobileui.js",
   "author": {

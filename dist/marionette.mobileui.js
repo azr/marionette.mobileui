@@ -1,4 +1,4 @@
-/*! marionette.mobileui - v0.3.1
+/*! marionette.mobileui - v0.4.0
  *  Release on: 2014-10-20
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
@@ -13,13 +13,15 @@ define([
   };
 
   var Panels = Marionette.LayoutView.extend({
+    className: 'ui_panels',
+  
     regions: {
-      left: '.panel--left',
-      right: '.panel--right',
-      content: '.panel--content'
+      left: '.ui_panel--left',
+      right: '.ui_panel--right',
+      content: '.ui_panel--content'
     },
   
-    panelOpenedClass: 'panel--opened',  // to mark that one panel is opened
+    panelOpenedClass: 'ui_panel--opened',  // to mark that one panel is opened
     panelActiveClass: 'active',         // to animage open panel
     swipeablePanels: ['left', 'right'],
   
@@ -100,7 +102,7 @@ define([
 
   var Overlay = Marionette.ItemView.extend({
     template: false,
-    className: 'fullscreen--overlay',
+    className: 'ui_fullscreen--overlay',
   
     triggers: {
       click: 'click'
