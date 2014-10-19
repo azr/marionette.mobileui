@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.2.1
- *  Release on: 2014-10-17
+/*! marionette.mobileui - v0.3.0
+ *  Release on: 2014-10-19
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -102,12 +102,11 @@ define([
     template: false,
     className: 'fullscreen--overlay',
   
-    events: {
-      click: 'onClick'
+    triggers: {
+      click: 'click'
     },
   
     onClick: function () {
-      this.trigger('click');
       this.destroy();
     }
   });
