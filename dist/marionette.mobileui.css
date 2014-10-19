@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.3.0
- *  Release on: 2014-10-19
+/*! marionette.mobileui - v0.3.1
+ *  Release on: 2014-10-20
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 .fullscreen--overlay {
@@ -27,7 +27,7 @@
 }
 
 .panel--left, .panel--right {
-  z-index: 1000;
+  z-index: 10;
 }
 
 .panel.active {
