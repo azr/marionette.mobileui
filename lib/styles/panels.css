@@ -1,4 +1,4 @@
-.panel {
+.ui_panel {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -8,18 +8,18 @@
   -webkit-transition: -webkit-transform 0.5s;
 }
 
-.panel--left {
+.ui_panel--left {
   -webkit-transform: translateX(-1000px);
 }
 
-.panel--right {
+.ui_panel--right {
   -webkit-transform: translateX(1000px);
 }
 
-.panel--left, .panel--right {
+.ui_panel--left, .ui_panel--right {
   z-index: 10;
 }
 
-.panel.active {
+.ui_panel.active {
   -webkit-transform: translateX(0);
 }
