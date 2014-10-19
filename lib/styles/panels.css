@@ -17,7 +17,7 @@
 }
 
 .panel--left, .panel--right {
-  z-index: 1000;
+  z-index: 10;
 }
 
 .panel.active {
