@@ -8,7 +8,7 @@ module.exports = {
     dest: 'dist/<%= pkg.name.replace(/.js$/, "") %>.js'
   },
   css: {
-    src: 'lib/styles/*.css',
+    src: '.tmp/styles/*.css',
     dest: 'dist/<%= pkg.name.replace(/.js$/, "") %>.css'
   }
 };

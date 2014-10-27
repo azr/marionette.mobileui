@@ -9,6 +9,7 @@ build:
   - preprocess
   - concat:js
   - uglify
+  - autoprefixer
   - concat:css
   - cssmin
   - copy:example
