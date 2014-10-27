@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.4.0
- *  Release on: 2014-10-20
+/*! marionette.mobileui - v0.4.1
+ *  Release on: 2014-10-27
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
