@@ -9,11 +9,11 @@
 }
 
 .ui_panel--left {
-  -webkit-transform: translateX(-1000px);
+  -webkit-transform: translateX(-100%);
 }
 
 .ui_panel--right {
-  -webkit-transform: translateX(1000px);
+  -webkit-transform: translateX(100%);
 }
 
 .ui_panel--left, .ui_panel--right {
