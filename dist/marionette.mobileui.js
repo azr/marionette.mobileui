@@ -1,5 +1,5 @@
-/*! marionette.mobileui - v0.4.1
- *  Release on: 2014-10-27
+/*! marionette.mobileui - v0.4.2
+ *  Release on: 2014-11-11
  *  Copyright (c) 2014 Stéphane Bachelier
  *  Licensed MIT */
 define([
@@ -18,7 +18,7 @@ define([
     regions: {
       left: '.ui_panel--left',
       right: '.ui_panel--right',
-      content: '.ui_panel--content'
+      main: '.ui_panel--main'
     },
   
     panelOpenedClass: 'ui_panel--opened',  // to mark that one panel is opened
@@ -41,6 +41,10 @@ define([
           this.listenTo(regions[name], event, events[event]);
         }
       }
+    },
+  
+    showMainPanel: function () {
+      this.showPanel('main');
     },
   
     showLeftPanel: function () {
