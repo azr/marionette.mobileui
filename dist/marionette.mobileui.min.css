@@ -1,6 +1,6 @@
 /*! marionette.mobileui - v0.4.3
- *  Release on: 2014-11-11
- *  Copyright (c) 2014 Stéphane Bachelier
+ *  Release on: 2015-03-01
+ *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 
-.ui_fullscreen--overlay{width:100%;height:100%;background-color:rgba(0,0,0,.6)}.ui_panel{position:absolute;width:100%;height:100%;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition:-webkit-transform .5s;transition:transform .5s}.ui_panel--left{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}.ui_panel--right{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%)}.ui_panel--left,.ui_panel--right{z-index:10}.ui_panel.active{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}
+.ui_fullscreen--overlay{width:100%;height:100%;background-color:rgba(0,0,0,.6)}.ui_panel{position:absolute;width:100%;height:100%;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);transition:-webkit-transform .5s;transition:transform .5s}.ui_panel--left{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}.ui_panel--right{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%)}.ui_panel--left,.ui_panel--right{z-index:10}.ui_panel.active{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}

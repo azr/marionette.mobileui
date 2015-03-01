@@ -1,6 +1,6 @@
 /*! marionette.mobileui - v0.4.3
- *  Release on: 2014-11-11
- *  Copyright (c) 2014 Stéphane Bachelier
+ *  Release on: 2015-03-01
+ *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 define([
   'marionette'
@@ -77,8 +77,8 @@ define([
       region.$el.addClass('active');
       this.currentPanel = region;
   
-      var method = _.bind(this.closePanel, this);
-      this.main.$el.one('click', method);
+      // var method = _.bind(this.closePanel, this);
+      // this.main.$el.one('click', method);
       this.triggerMethod('show:panel', name);
     },
   

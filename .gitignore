@@ -2,6 +2,7 @@ node_modules
 ./dist
 test/temp
 tmp
+.tmp
 docs
 .DS_Store
 npm-debug.log
@@ -11,3 +12,4 @@ examples/bower_components
 
 examples/scripts/marionette.mobileui.js
 examples/styles/marionette.mobileui.css
+

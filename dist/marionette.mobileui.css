@@ -1,6 +1,6 @@
 /*! marionette.mobileui - v0.4.3
- *  Release on: 2014-11-11
- *  Copyright (c) 2014 Stéphane Bachelier
+ *  Release on: 2015-03-01
+ *  Copyright (c) 2015 Stéphane Bachelier
  *  Licensed MIT */
 .ui_fullscreen--overlay {
   width: 100%;
@@ -14,8 +14,8 @@
   height: 100%;
   -webkit-transform: translate3d(0,0,0);
           transform: translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.5s;
-          transition: transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .ui_panel--left {
